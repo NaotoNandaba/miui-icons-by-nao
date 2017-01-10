@@ -40,3 +40,25 @@ task buildIcons << {
         ]
     }
 }
+
+task debug << {
+    file('build').deleteDir()
+
+    buildIcons.execute()
+
+    packageIcons.execute()
+
+    release.execute()
+}
+
+task packageIcons(type: Zip) {
+    from 'build/icons.zip/'
+    archiveName 'icons'
+    destinationDir(file('/build'))
+}
+
+task release(type: Zip) {
+    from (['build/icons', 'description.xml'])
+    archiveName 'theme.mtz'
+    destinationDir(file('/bin'))
+}
