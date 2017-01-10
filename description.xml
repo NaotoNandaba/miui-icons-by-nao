@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MIUI-Theme>
+    <version>${version}</version>
+    <uiVersion>${uiVersion}</uiVersion>
+    <author>NaotoNandaba</author>
+    <designer>NaotoNandaba</designer>
+    <title>MIUI ${uiVersion} Icon Addon by Nao</title>
+    <description>Additional icons for MIUI ${uiVersion}</description>
+</MIUI-Theme>

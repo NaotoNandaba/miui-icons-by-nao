@@ -2,7 +2,7 @@ task buildIcons << {
     javaexec {
         main = "-jar";
         args = [
-                "gradle/tools/ps-image-tool/ps-image-tool-1.0-SNAPSHOT.jar",
+                "gradle/gradle/tools/ps-image-tool/ps-image-tool-1.0-SNAPSHOT.jar",
                 "src/icons",
                 "build/icons.zip/res/drawable-hdpi",
                 "90",
@@ -12,7 +12,7 @@ task buildIcons << {
     javaexec {
         main = "-jar";
         args = [
-                "gradle/tools/ps-image-tool/ps-image-tool-1.0-SNAPSHOT.jar",
+                "gradle/gradle/tools/ps-image-tool/ps-image-tool-1.0-SNAPSHOT.jar",
                 "src/icons",
                 "build/icons.zip/res/drawable-xhdpi",
                 "136",
@@ -22,7 +22,7 @@ task buildIcons << {
     javaexec {
         main = "-jar";
         args = [
-                "gradle/tools/ps-image-tool/ps-image-tool-1.0-SNAPSHOT.jar",
+                "gradle/gradle/tools/ps-image-tool/ps-image-tool-1.0-SNAPSHOT.jar",
                 "src/icons",
                 "build/icons.zip/res/drawable-xxhdpi",
                 "192",
@@ -32,7 +32,7 @@ task buildIcons << {
     javaexec {
         main = "-jar";
         args = [
-                "gradle/tools/ps-image-tool/ps-image-tool-1.0-SNAPSHOT.jar",
+                "gradle/gradle/tools/ps-image-tool/ps-image-tool-1.0-SNAPSHOT.jar",
                 "src/icons",
                 "build/icons.zip/res/drawable-xxxhdpi",
                 "224",
