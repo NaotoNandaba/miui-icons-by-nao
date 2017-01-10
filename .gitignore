@@ -1,8 +1,15 @@
+# Gradle Files
 .gradle/
-.idea/
+
+# Custom Gradle Tasks Files
 bin/
 build/
-external/
-ref/
 extenxions/
+
+# Intellij IDEA Files
+.idea/
 *.iml
+
+# Custom Files
+ref/
+external/
