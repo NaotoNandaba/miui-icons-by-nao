@@ -72,7 +72,7 @@ task packageIcons(type: Zip) {
 }
 
 task release(type: Zip) {
-    from (['build/icons', 'description.xml'])
+    from (['build/icons', 'build/description.xml'])
     archiveName "debug-${new Date().format('yyyyMMdd-HHmm')}.mtz"
     destinationDir(file('build'))
 }
