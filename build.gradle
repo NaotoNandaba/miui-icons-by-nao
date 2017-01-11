@@ -1,3 +1,6 @@
+String version = "0.0.1-SNAPSHOT"
+String uiVersion = "8"
+
 task buildIcons << {
     javaexec {
         main = "-jar"
@@ -41,10 +44,21 @@ task buildIcons << {
     }
 }
 
+task buildXml << {
+    String descriptionTemplate = new File('description.xml').getText('UTF-8')
+    descriptionTemplate = descriptionTemplate.replaceAll('\\$version', version).replaceAll('\\$uiVersion', uiVersion)
+    println(descriptionTemplate)
+
+    File description = new File('build/description.xml')
+    description.write(descriptionTemplate)
+}
+
 task debug << {
     file('build').deleteDir()
 
     buildIcons.execute()
+
+    buildXml.execute()
 
     packageIcons.execute()
 
@@ -59,6 +73,6 @@ task packageIcons(type: Zip) {
 
 task release(type: Zip) {
     from (['build/icons', 'description.xml'])
-    archiveName 'theme.mtz'
-    destinationDir(file('/bin'))
+    archiveName "debug-${new Date().format('yyyyMMdd-HHmm')}.mtz"
+    destinationDir(file('build'))
 }
