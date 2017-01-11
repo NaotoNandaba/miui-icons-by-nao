@@ -60,6 +60,8 @@ task debug << {
 
     buildXml.execute()
 
+    copyExternal.execute()
+    
     packageIcons.execute()
 
     release.execute()
@@ -75,4 +77,9 @@ task release(type: Zip) {
     from (['build/icons', 'build/description.xml'])
     archiveName "debug-${new Date().format('yyyyMMdd-HHmm')}.mtz"
     destinationDir(file('build'))
+}
+
+task copyExternal(type: Copy) {
+    from 'external'
+    into 'build'
 }
